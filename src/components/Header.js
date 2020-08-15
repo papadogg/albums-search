@@ -1,14 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import styles from './Header.module.css';
 
 const Header = () => (
-  <nav>
+  <nav className={styles.nav}>
     <ul>
       <li>
-        <Link to="/">My ablums</Link>
+        <NavLink to="/" activeClassName={styles.active} exact={true}>
+          My ablums
+        </NavLink>
       </li>
       <li>
-        <Link to="/search">Search</Link>
+        <NavLink to="/search" activeClassName={styles.active}>
+          Search
+        </NavLink>
       </li>
     </ul>
   </nav>

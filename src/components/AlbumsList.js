@@ -1,37 +1,14 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { addAlbum, deleteAlbum } from '../redux/actions';
+import AlbumsListItem from './AlbumsListItem';
+import styles from './AlbumsList.module.css';
 
 const AlbumsList = ({ albums = [] }) => {
-  console.log(albums);
-  const dispatch = useDispatch();
-
-  const addToCollection = (album) => {
-    dispatch(addAlbum(album));
-  };
-
-  const deleteFromCollection = (album) => {
-    dispatch(deleteAlbum(album));
-  };
-
   return (
-    <div>
-      <ul>
-        {albums.map((album) => (
-          <li key={album.id}>
-            <span>
-              {album.artist} - {album.title}
-            </span>
-            <button onClick={() => addToCollection(album)}>
-              Add to collection
-            </button>
-            <button onClick={() => deleteFromCollection(album)}>
-              Delete from collection
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className={styles.list}>
+      {albums.map((album) => (
+        <AlbumsListItem key={album.id} album={album} />
+      ))}
+    </ul>
   );
 };
 

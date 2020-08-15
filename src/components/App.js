@@ -4,12 +4,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './Header';
 import MyAblums from './MyAblums';
 import Search from './Search';
+import styles from './App.module.css';
 
 function App() {
   return (
     <Router>
-      <div>
-        <Header />
+      <Header />
+      <div className={styles.container}>
         <Switch>
           <Route exact path="/">
             <MyAblums />

@@ -1,0 +1,11 @@
+.list li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+@media (max-width: 800px) {
+  .list li > button {
+    width: 80px;
+  }
+}
